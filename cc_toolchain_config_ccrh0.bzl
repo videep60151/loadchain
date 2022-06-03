@@ -94,7 +94,7 @@ def _impl(ctx):
                 "user_link_flags",
                 "default_link_flags",
         ],
-        tools = [tool(path = "C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/arm-none-eabi-gcc")],
+        tools = [tool(path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/ccrh")],
     )
 
     cpp_link_dynamic_library_action = action_config(
@@ -105,7 +105,7 @@ def _impl(ctx):
                 "user_link_flags",
                 "default_link_flags",
         ],
-        tools = [tool(path = "C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/arm-none-eabi-gcc")],
+        tools = [tool(path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/ccrh")],
     )
 
     cpp_link_nodeps_dynamic_library_action = action_config(
@@ -116,7 +116,7 @@ def _impl(ctx):
                 "user_link_flags",
                 "default_link_flags",
         ],
-        tools = [tool(path = "C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/arm-none-eabi-gcc")],
+        tools = [tool(path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/ccrh")],
     )
 
     cpp_link_static_library_action = action_config(
@@ -126,7 +126,7 @@ def _impl(ctx):
                 "output_execpath_flags",
                 "libraries_to_link",
         ],
-        tools = [tool(path = "C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/arm-none-eabi-ar")],
+        tools = [tool(path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/asrh")],
     )
 
     c_compile_action = action_config(
@@ -140,7 +140,7 @@ def _impl(ctx):
             "unfiltered_compile_flags",
             "compiler_output_flags",
         ],
-        tools = [tool(path = "C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/arm-none-eabi-gcc")],
+        tools = [tool(path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/ccrh")],
     )
 
     assemble_action = action_config(
@@ -154,41 +154,41 @@ def _impl(ctx):
             "unfiltered_compile_flags",
             "compiler_output_flags",
         ],
-        tools = [tool(path = "C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/arm-none-eabi-gcc")],
+        tools = [tool(path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/ccrh")],
     )
 
     tool_paths = [
         tool_path(
             name = "gcc",
-            path = "C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/arm-none-eabi-gcc",
+            path = "compile.bat",
         ),
         tool_path(
             name = "ld",
-            path = "C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/arm-none-eabi-gcc",
+            path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/ccrh",
         ),
         tool_path(
             name = "ar",
-            path = "C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/arm-none-eabi-ar",
+            path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/asrh",
         ),
         tool_path(
             name = "cpp",
-            path = "C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/arm-none-eabi-g++",
+            path = "compile.bat",
         ),
         tool_path(
             name = "gcov",
-            path = "C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/arm-none-eabi-gcov",
+            path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/rlink",
         ),
         tool_path(
             name = "nm",
-            path = "C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/arm-none-eabi-nm",
+            path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/rlink",
         ),
         tool_path(
             name = "objdump",
-            path = "C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/arm-none-eabi-objdump",
+            path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/rlink",
         ),
         tool_path(
             name = "strip",
-            path = "C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/arm-none-eabi-strip",
+            path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/rlink",
         ),
     ]
 
@@ -232,7 +232,7 @@ def _impl(ctx):
                 ],
                 flag_groups = [
                     flag_group(
-                        flags = ["-o", "%{output_file}"],
+                        flags = ["-o%{output_file}"],
                         expand_if_available = "output_file",
                     ),
                 ],
@@ -242,7 +242,7 @@ def _impl(ctx):
 
     default_compile_flags_feature = feature(
         name = "default_compile_flags",
-        # enabled = True,
+        enabled = True,
         flag_sets = [
             flag_set(
                 actions = [
@@ -257,32 +257,7 @@ def _impl(ctx):
                     ACTION_NAMES.lto_backend,
                     ACTION_NAMES.clif_match,
                 ],
-                flag_groups = [
-                    flag_group(
-                        flags = [
-                            "-DCPU_S32K144HFT0VLLT",
-                            "-DCPU_S32K144",
-                            "-DTURN_ON_CPU0",
-                            "-DMCU=S32K144",
-                            "-O0",
-                            "-g3",
-                            "-Wall",
-                            "-Wextra",
-                            "-pedantic",
-                            "-funsigned-bitfields",
-                            "-fno-common",
-                            "-Wunused",
-                            "-Wfloat-equal",
-                            "-Waggregate-return",
-                            "-mcpu=cortex-m4",
-                            "-march=armv7e-m",
-                            "-mthumb",
-                            "-mfloat-abi=hard",
-                            "-mfpu=fpv4-sp-d16",
-                            "-specs=nosys.specs",
-                        ],
-                    ),
-                ],
+
             ),
         ],
     )
@@ -582,7 +557,7 @@ def _impl(ctx):
 
     dependency_file_feature = feature(
         name = "dependency_file",
-        enabled = True,
+        enabled = False,
         flag_sets = [
             flag_set(
                 actions = [
@@ -596,6 +571,10 @@ def _impl(ctx):
                 ],
             ),
         ],
+    )
+    random_seed_feature=feature(
+    name='random_seed',
+    enabled=False,
     )
 
     include_paths_feature = feature(
@@ -650,7 +629,9 @@ def _impl(ctx):
         libraries_to_link_feature,
         strip_debug_symbols_feature,
         include_paths_feature,
-
+        dependency_file_feature,
+        random_seed_feature,
+        sysroot_feature
     ]
 
     return cc_common.create_cc_toolchain_config_info(
@@ -659,24 +640,21 @@ def _impl(ctx):
         # artifact_name_patterns = artifact_name_patterns,
         action_configs = action_configs,
         cxx_builtin_include_directories = [
-            "C:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/include",
-            "C:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/usr/include",
-            "C:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/lib/gcc/arm-none-eabi/6.3.1/include",
-            "C:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/lib/gcc/arm-none-eabi/6.3.1/include-fixed",
+          "C:/Users/videep.reddy/Downloads/V2.04.00/inc",
         ],
-        builtin_sysroot = "C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib",
-        toolchain_identifier = "s32k1xx-toolchain_63",
+        #builtin_sysroot = "C:/Users/videep.reddy/Downloads/V2.04.00/lib/v850e3v5",
+        toolchain_identifier = "s32k1xx-toolchain_c",
         host_system_name = "arm-cm4",
         target_system_name = "arm-cm4",
-        target_cpu = "s32k1xx_63",
+        target_cpu = "s32k1xx_c",
         target_libc = "unknown",
-        compiler = "arm-none-eabi-gcc",
+        compiler = "c",
         abi_version = "unknown",
         abi_libc_version = "unknown",
         tool_paths = tool_paths,
     )
 
-cc_toolchain_config_63 = rule(
+cc_toolchain_config_c = rule(
     implementation = _impl,
     attrs = {},
     # provides = [CcToolchainConfigInfo],
