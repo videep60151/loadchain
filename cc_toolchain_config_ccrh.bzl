@@ -140,7 +140,7 @@ def _impl(ctx):
             "unfiltered_compile_flags",
             "compiler_output_flags",
         ],
-        tools = [tool(path = "compiler.bat")],
+        tools = [tool(path = "C:/bazel/compiler.bat")],
     )
 
     assemble_action = action_config(
@@ -160,7 +160,7 @@ def _impl(ctx):
     tool_paths = [
         tool_path(
             name = "gcc",
-            path = "compiler.bat",
+            path = "C:/bazel/compiler.bat",
         ),
         tool_path(
             name = "ld",
@@ -172,7 +172,7 @@ def _impl(ctx):
         ),
         tool_path(
             name = "cpp",
-            path = "compiler.bat",
+            path = "C:/bazel/compiler.bat",
         ),
         tool_path(
             name = "gcov",
