@@ -94,7 +94,7 @@ def _impl(ctx):
                 "user_link_flags",
                 "default_link_flags",
         ],
-        tools = [tool(path = "C:/Program Files (x86)/Renesas Electronics/CS+/CC/CC-RH/V2.03.00/bin/rlink")],
+        tools = [tool(path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/rlink")],
     )
 
     cpp_link_dynamic_library_action = action_config(
@@ -105,7 +105,7 @@ def _impl(ctx):
                 "user_link_flags",
                 "default_link_flags",
         ],
-        tools = [tool(path = "C:/Program Files (x86)/Renesas Electronics/CS+/CC/CC-RH/V2.03.00/bin/ccrh")],
+        tools = [tool(path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/ccrh")],
     )
 
     cpp_link_nodeps_dynamic_library_action = action_config(
@@ -116,7 +116,7 @@ def _impl(ctx):
                 "user_link_flags",
                 "default_link_flags",
         ],
-        tools = [tool(path = "C:/Program Files (x86)/Renesas Electronics/CS+/CC/CC-RH/V2.03.00/bin/ccrh")],
+        tools = [tool(path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/ccrh")],
     )
 
     cpp_link_static_library_action = action_config(
@@ -126,7 +126,7 @@ def _impl(ctx):
                 "output_execpath_flags",
                 "libraries_to_link",
         ],
-        tools = [tool(path = "C:/Program Files (x86)/Renesas Electronics/CS+/CC/CC-RH/V2.03.00/bin/ccrh")],
+        tools = [tool(path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/ccrh")],
     )
 
     c_compile_action = action_config(
@@ -140,7 +140,7 @@ def _impl(ctx):
             "unfiltered_compile_flags",
             "compiler_output_flags",
         ],
-        tools = [tool(path = "C:/bazel/compiler.bat")],
+        tools = [tool(path = "compile.bat")],
     )
 
     assemble_action = action_config(
@@ -154,41 +154,41 @@ def _impl(ctx):
             "unfiltered_compile_flags",
             "compiler_output_flags",
         ],
-        tools = [tool(path = "C:/Program Files (x86)/Renesas Electronics/CS+/CC/CC-RH/V2.03.00/bin/ccrh")],
+        tools = [tool(path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/ccrh")],
     )
 
     tool_paths = [
         tool_path(
             name = "gcc",
-            path = "C:/bazel/compiler.bat",
+            path = "compile.bat",
         ),
         tool_path(
             name = "ld",
-            path = "C:/Program Files (x86)/Renesas Electronics/CS+/CC/CC-RH/V2.03.00/bin/asrh",
+            path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/asrh",
         ),
         tool_path(
             name = "ar",
-            path = "C:/Program Files (x86)/Renesas Electronics/CS+/CC/CC-RH/V2.03.00/bin/asrh",
+            path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/asrh",
         ),
         tool_path(
             name = "cpp",
-            path = "C:/bazel/compiler.bat",
+            path = "compile.bat",
         ),
         tool_path(
             name = "gcov",
-            path = "C:/Program Files (x86)/Renesas Electronics/CS+/CC/CC-RH/V2.03.00/bin/rlink",
+            path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/rlink",
         ),
         tool_path(
             name = "nm",
-            path = "C:/Program Files (x86)/Renesas Electronics/CS+/CC/CC-RH/V2.03.00/bin/rlink",
+            path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/rlink",
         ),
         tool_path(
             name = "objdump",
-            path = "C:/Program Files (x86)/Renesas Electronics/CS+/CC/CC-RH/V2.03.00/bin/rlink",
+            path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/rlink",
         ),
         tool_path(
             name = "strip",
-            path = "C:/Program Files (x86)/Renesas Electronics/CS+/CC/CC-RH/V2.03.00/bin/rlink",
+            path = "C:/Users/videep.reddy/Downloads/V2.04.00/bin/rlink",
         ),
     ]
 
@@ -632,9 +632,9 @@ def _impl(ctx):
         # artifact_name_patterns = artifact_name_patterns,
         action_configs = action_configs,
         cxx_builtin_include_directories = [
-            "C:/Program Files (x86)/Renesas Electronics/CS+/CC/CC-RH/V2.03.00/inc",
+            "C:/Users/videep.reddy/Downloads/V2.04.00/inc",
             ],
-        #builtin_sysroot = "C:/Program Files (x86)/Renesas Electronics/CS+/CC/CC-RH/V2.03.00/lib/v850e3v5",
+        #builtin_sysroot = "C:/Users/videep.reddy/Downloads/V2.04.00/lib/v850e3v5",
         toolchain_identifier = "s32k1xx-toolchain_ccrh",
         host_system_name = "ccr",
         target_system_name = "ccr",
